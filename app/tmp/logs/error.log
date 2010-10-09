@@ -8,3 +8,4 @@
 2010-10-09 17:05:45 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampplite\htdocs\aptana\hackny\cake\basics.php:110) in [C:\xampplite\htdocs\aptana\hackny\cake\libs\controller\controller.php, line 746]
 2010-10-09 17:09:21 Warning: Warning (4096): Object of class Site could not be converted to string in [C:\xampplite\htdocs\aptana\hackny\app\controllers\sites_controller.php, line 18]
 2010-10-09 17:09:59 Warning: Warning (4096): Object of class Site could not be converted to string in [C:\xampplite\htdocs\aptana\hackny\app\controllers\sites_controller.php, line 18]
+2010-10-09 17:47:39 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at C:\xampplite\htdocs\aptana\hackny\cake\basics.php:110) in [C:\xampplite\htdocs\aptana\hackny\cake\libs\controller\controller.php, line 746]
