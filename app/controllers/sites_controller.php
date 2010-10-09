@@ -9,7 +9,7 @@ class SitesController extends AppController {
 		$this->set('sites', $this->paginate());
 	}
 
-	function view($id = null, $key=null) {
+	function view($id = null, $key = null) {
 		if (!$id) {
 			$this->Session->setFlash(__('Invalid site', true));
 			$this->redirect(array('action' => 'index'));
@@ -20,7 +20,7 @@ class SitesController extends AppController {
 		if($this->Site->data["Site"]["edit_key"] == $key)
 		{
 			//debug("Admin perm");
-			$this->redirect(array('action' => 'edit',$id));
+			$this->redirect(array('action' => 'edit',$id, $key));
 		}
 		else
 		{
@@ -54,7 +54,7 @@ class SitesController extends AppController {
 		}
 	}
 
-	function edit($id = null) {
+	function edit($id = null, $key = null) {
 		if (!$id && empty($this->data)) {
 			$this->Session->setFlash(__('Invalid site', true));
 			$this->redirect(array('action' => 'index'));
@@ -67,6 +67,10 @@ class SitesController extends AppController {
 				$this->Session->setFlash(__('The site could not be saved. Please, try again.', true));
 			}
 		}
+    $this->Site->read(null, $id);
+    if (!($this->Site->data["Site"]["edit_key"] == $key)){
+      $this->redirect(array('controller' => 'pages' ,'action' => 'index'));
+    }
 		if (empty($this->data)) {
 			$this->data = $this->Site->read(null, $id);
 		}
