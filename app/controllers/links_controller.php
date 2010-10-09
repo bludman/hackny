@@ -19,6 +19,7 @@ class LinksController extends AppController {
 	function add() {
 		if (!empty($this->data)) {
 			$this->Link->create();
+			
 			if ($this->Link->save($this->data)) {
 				$this->Session->setFlash(__('The link has been saved', true));
 				$this->redirect(array('action' => 'index'));
