@@ -15,13 +15,12 @@ class SitesController extends AppController {
 			$this->redirect(array('action' => 'index'));
 		}
 		
-		//$this->Site->read(null, $id);
 		$this->set('site', $this->Site->read(null, $id));
 		$this->set('editMode', $this->Site->data["Site"]["edit_key"] == $key);
 		if($this->Site->data["Site"]["edit_key"] == $key)
 		{
 			//debug("Admin perm");
-			$this->redirect(array('action' => 'admin_view'));
+			$this->redirect(array('action' => 'edit',$id));
 		}
 		else
 		{
