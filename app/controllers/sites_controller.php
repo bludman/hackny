@@ -28,7 +28,6 @@ class SitesController extends AppController {
 			//debug("User perm only");
 			$this->layout = 'site_default';
 		}
-		
 	}
 	
 
@@ -36,20 +35,23 @@ class SitesController extends AppController {
 		if (!empty($this->data)) {
 			$this->Site->create();
 			$this->data["Site"]["edit_key"]=md5(time().$this->data["Site"]["name"]);
-			
-			
-			
-			
+					
 			if ($this->Site->save($this->data)) {
-				$this->Session->setFlash(__('The site has been saved', true));
-								
-				
-				$this->Email->from    = 'Ben <bludman@gmail.com>';
-				$this->Email->to      = $this->data["Site"]["owner_email"];
-				$this->Email->subject = 'you key';
-				$this->Email->send($this->data["Site"]["edit_key"]);
+			//The bit.ly 
+      $url_string = "http://www.hackny.com" . $this->base . "/Sites/view/" . $this->Site->getLastInsertId() . "/";
+      ini_get('allow_url_fopen');
+      $content = file_get_contents('http://api.bit.ly/v3/shorten?login=epkatz&apiKey=R_7ff58887495e8fecb8f0009651a30da3&longUrl='.$url_string.'&format=txt');
+      $this->data["Site"]["short_url"] = $content;
+        if ($this->Site->save($this->data)){
+          $this->Session->setFlash(__('The site has been saved', true));
+          $this->redirect(array('action' => 'index'));
+        }
+        
+				/*$this->Email->from    = 'Ben <bludman@gmail.com>';
+								$this->Email->to      = $this->data["Site"]["owner_email"];
+								$this->Email->subject = 'you key';
+								$this->Email->send($this->data["Site"]["edit_key"]);*/
 
-				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The site could not be saved. Please, try again.', true));
 			}
