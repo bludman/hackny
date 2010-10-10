@@ -69,12 +69,16 @@ class SitesController extends AppController {
 				$this->Session->setFlash(__('The site could not be saved. Please, try again.', true));
 			}
 		}
-    $this->Site->read(null, $id);
-    if (!($this->Site->data["Site"]["edit_key"] == $key)){
-      $this->redirect(array('controller' => 'pages' ,'action' => 'index'));
-    }
+		
+	    $this->Site->read(null, $id);
+	    if (!($this->Site->data["Site"]["edit_key"] == $key)){
+	      $this->redirect(array('controller' => 'pages' ,'action' => 'index'));
+	    }
+	    
 		if (empty($this->data)) {
 			$this->data = $this->Site->read(null, $id);
+			//debug($this->data["Link"]);
+			$this->set('links',$this->data["Link"]);
 		}
 	}
 

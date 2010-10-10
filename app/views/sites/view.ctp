@@ -1,6 +1,9 @@
-<h2>
+<h1>
 <?php echo $site['Site']['name']; ?>
-</h2>
+</h1>
+<p>
+<?php echo $site['Site']['description']; ?>
+</p>
 
 <!--
 <div class="sites view">
