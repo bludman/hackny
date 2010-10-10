@@ -10,6 +10,8 @@
 
 
 
+
+
 <div id="map_canvas" style="width: 400px; height:300px">LOADING</div>
 <script type="text/javascript">
 		var lat= 40.728771;

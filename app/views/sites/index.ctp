@@ -6,6 +6,7 @@
 			<th><?php echo $this->Paginator->sort('name');?></th>
 			<th><?php echo $this->Paginator->sort('owner_email');?></th>
 			<th><?php echo $this->Paginator->sort('edit_key');?></th>
+			<th><?php echo $this->Paginator->sort('short_url');?></th>
 			<th class="actions"><?php __('Actions');?></th>
 	</tr>
 	<?php
@@ -21,6 +22,7 @@
 		<td><?php echo $site['Site']['name']; ?>&nbsp;</td>
 		<td><?php echo $site['Site']['owner_email']; ?>&nbsp;</td>
 		<td><?php echo $site['Site']['edit_key']; ?>&nbsp;</td>
+		<td><?php echo $site['Site']['short_url']; ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $site['Site']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $site['Site']['id'])); ?>
