@@ -25,6 +25,7 @@
 		<?php __('CakePHP: the rapid development php framework:'); ?>
 		<?php echo $title_for_layout; ?>
 	</title>
+	<scr
 	<?php
 		echo $this->Html->meta('icon');
 

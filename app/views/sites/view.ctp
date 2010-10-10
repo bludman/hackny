@@ -1,3 +1,6 @@
+<?php  $javascript->link('maps', false); ?>
+<?php  $javascript->link('http://maps.google.com/maps/api/js?sensor=false', false); ?>
+
 <h1>
 <?php echo $site['Site']['name']; ?>
 </h1>
@@ -5,6 +8,15 @@
 <?php echo $site['Site']['description']; ?>
 </p>
 
+
+
+<div id="map_canvas" style="width: 400px; height:300px">LOADING</div>
+<script type="text/javascript">
+		var lat= 40.728771;
+		var long= -73.995752;
+		console.log("Test");
+		mapinit();
+</script>
 <!--
 <div class="sites view">
 <h2><?php  __('Site');?></h2>

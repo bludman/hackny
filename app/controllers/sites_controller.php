@@ -3,7 +3,7 @@ class SitesController extends AppController {
 
 	var $name = 'Sites';
 	var $components = array('Email');
-	var $helpers = array('Html');
+	var $helpers = array('Html','Javascript');
 
 	function index() {
 		$this->Site->recursive = 0;
