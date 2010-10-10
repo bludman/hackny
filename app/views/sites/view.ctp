@@ -7,8 +7,8 @@
 <p>
 <?php echo $site['Site']['description']; ?>
 </p>
-
-
+<?php echo $site['Site']['short_url'] . "<br>"; ?>
+<?php echo "<img src=" . trim($site['Site']['short_url']) . ".qrcode" . "><br>"; ?>
 
 
 
