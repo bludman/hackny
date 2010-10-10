@@ -12,13 +12,17 @@
 
 
 
+
 <div id="map_canvas" style="width: 400px; height:300px">LOADING</div>
 <script type="text/javascript">
-		var lat= 40.728771;
-		var long= -73.995752;
+		var lat= <?php echo $site['Site']['lat'];?>;
+		var long=<?php echo $site['Site']['lng'];?>;
 		console.log("Test");
 		mapinit();
 </script>
+
+<div><img width="280" height="280" style="border:1px solid #888888;" 
+src="http://maps.google.com/maps/api/staticmap?center=<?php echo $site['Site']['lat'];?>,<?php echo $site['Site']['lng'];?>&amp;size=280x280&amp;maptype=roadmap&amp;markers=color:red|<?php echo $site['Site']['lat'];?>,<?php echo $site['Site']['lng'];?>&amp;zoom=15&amp;sensor=false&amp;key=" /></div>
 <!--
 <div class="sites view">
 <h2><?php  __('Site');?></h2>

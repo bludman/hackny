@@ -35,8 +35,12 @@ function mapinit() {
 		google.maps.event.addListener(marker, "dragend", function() {
 			center = marker.getPosition();
 			console.log("lng: "+center.lng()+", lat: "+center.lat());
-			$("venue_longitude").value=center.lng();
-			$("venue_latitude").value=center.lat();
+			console.log(document.getElementById('SiteLat').value);
+			//$('#SiteLng').value=center.lng();
+			document.getElementById('SiteLng').value=center.lng();
+			//$('#SiteLat').value=center.lat();
+			document.getElementById('SiteLat').value=center.lat();
+
 		});
 		
 		marker.setMap(map);

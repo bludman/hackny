@@ -66,7 +66,8 @@ class SitesController extends AppController {
 		if (!empty($this->data)) {
 			if ($this->Site->save($this->data)) {
 				$this->Session->setFlash(__('The site has been saved', true));
-				$this->redirect(array('action' => 'index'));
+				//$this->redirect(array('action' => 'index'));
+				$this->redirect(array('action' => 'edit',$id,$key));
 			} else {
 				$this->Session->setFlash(__('The site could not be saved. Please, try again.', true));
 			}
@@ -74,6 +75,7 @@ class SitesController extends AppController {
 		
 	    $this->Site->read(null, $id);
 	    if (!($this->Site->data["Site"]["edit_key"] == $key)){
+	    	$this->Session->setFlash(__('Invalid edit key', true));
 	      $this->redirect(array('controller' => 'pages' ,'action' => 'index'));
 	    }
 	    
@@ -81,7 +83,9 @@ class SitesController extends AppController {
 			$this->data = $this->Site->read(null, $id);
 			//debug($this->data["Link"]);
 			$this->set('links',$this->data["Link"]);
+			$this->layout = 'site_default';
 		}
+		
 	}
 
 	function delete($id = null) {
