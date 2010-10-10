@@ -1,8 +1,11 @@
 <h2>
 <?php echo $site['Site']['name'] . "<br>"; ?>
+</h2>
+<p>
+<?php echo $site['Site']['description']; ?>
+</p>
 <?php echo $site['Site']['short_url'] . "<br>"; ?>
 <?php echo "<img src=" . trim($site['Site']['short_url']) . ".qrcode" . "><br>"; ?>
-</h2>
 
 <!--
 <div class="sites view">

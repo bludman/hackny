@@ -28,7 +28,7 @@
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css('cake.generic');
+		echo $this->Html->css('style');
 
 		echo $scripts_for_layout;
 	?>
@@ -61,5 +61,8 @@
 		</div>
 	</div>
 	<?php // echo $this->element('sql_dump'); ?>
+	 <div><img width="280" height="280" style="border:1px solid #888888;" src="http://maps.google.com/maps/api/staticmap?center=40.728771,-73.995752&amp;size=280x280&amp;maptype=roadmap&amp;markers=color:red|40.728771,-73.995752&amp;zoom=15&amp;sensor=false&amp;key=" /></div> 
+	
+	
 </body>
 </html>
