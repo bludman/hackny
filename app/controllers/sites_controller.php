@@ -38,6 +38,7 @@ class SitesController extends AppController {
 					
 			if ($this->Site->save($this->data)) {
 			//The bit.ly 
+			//FIXME:Grab Location Dynamic
       $url_string = "http://www.hackny.com" . $this->base . "/Sites/view/" . $this->Site->getLastInsertId() . "/";
       ini_get('allow_url_fopen');
       $content = file_get_contents('http://api.bit.ly/v3/shorten?login=epkatz&apiKey=R_7ff58887495e8fecb8f0009651a30da3&longUrl='.$url_string.'&format=txt');

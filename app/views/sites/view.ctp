@@ -1,24 +1,13 @@
 <?php  $javascript->link('maps', false); ?>
 <?php  $javascript->link('http://maps.google.com/maps/api/js?sensor=false', false); ?>
-
+<div id="view-content">
 <h1>
-<?php echo $site['Site']['name']; ?>
+<div id="view-title"><?php echo $site['Site']['name']; ?></div>
 </h1>
 <p>
-<?php echo $site['Site']['description']; ?>
+<div id="view-description"><?php echo $site['Site']['description']; ?></div>
 </p>
-<?php echo $site['Site']['short_url'] . "<br>"; ?>
-<?php echo "<img src=" . trim($site['Site']['short_url']) . ".qrcode" . "><br>"; ?>
 
-
-
-<div id="map_canvas" style="width: 400px; height:300px">LOADING</div>
-<script type="text/javascript">
-		var lat= 40.728771;
-		var long= -73.995752;
-		console.log("Test");
-		mapinit();
-</script>
 <!--
 <div class="sites view">
 <h2><?php  __('Site');?></h2>
@@ -47,6 +36,8 @@
 </div>
 
 -->
+<div id="view-details">
+<div id="view-links">
 <div class="related">
 	<?php if (!empty($site['Link'])):?>
 	<?php
@@ -62,5 +53,17 @@
 		</li>
 	<?php endforeach; ?>
 	<?php endif; ?>
+</div>
+</div>
+<div id="view-url"><?php echo $site['Site']['short_url'] . "<br>"; ?></div>
+<div id="view-qr"><?php echo "<img src=" . trim($site['Site']['short_url']) . ".qrcode" . "><br>"; ?></div>
+  <div id="map_canvas" style="width: 400px; height:300px">LOADING</div>
+  <script type="text/javascript">
+      var lat= 40.728771;
+      var long= -73.995752;
+      console.log("Test");
+      mapinit();
+  </script>
+</div>
 </div>
 

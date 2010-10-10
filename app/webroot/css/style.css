@@ -1,7 +1,57 @@
 @CHARSET "ISO-8859-1";
 
+#view-content {
+  width:900px;
+  margin:30px 50px 0 50px;
+  min-height:850px;
+}
+
 h1 {
-	color: yellow;
 	font-family: helvetica, arial sans-serif;
 	font-size:xx-large;
+}
+
+#view-title {
+  text-align:center;
+  font-family:"Rockwell Condensed";
+  font-size:50px;
+  padding-top:30px;
+}
+
+#view-url {
+  font-family:"Maiandra GD";
+  text-align:right;
+}
+
+#view-qr{
+  position:relative;
+  margin-top:20px;
+  float:right;
+}
+
+#map-canvas {
+  float:left;
+  margin-left:100px;
+}
+
+#view-content li {
+  list-style:none;
+  padding:5px;
+}
+
+#view-links {
+  
+}
+
+#view-details {
+  margin:0 auto;
+  position:relative;
+  float:center;
+  width:750px;
+}
+
+#view-content a {
+  text-decoration:none;
+  font-family:Helvetica;
+  color:black;
 }
